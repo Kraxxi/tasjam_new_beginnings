@@ -12,7 +12,16 @@ public class InputHandler : MonoBehaviour
     
     public void HandleMove(InputAction.CallbackContext ctx)
     {
-        _currentInput = ctx.ReadValue<Vector2>();
+        _currentInput = ctx.ReadValue<Vector2>().normalized;
+        
         player.mover.Move(_currentInput);
+        player.aimDirection.SetDirection(_currentInput);
+    }
+
+    public void HandlePrimaryAttack(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.performed) return;
+        
+        player.weaponUser.Attack();
     }
 }

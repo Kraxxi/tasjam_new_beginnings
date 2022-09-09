@@ -9,6 +9,17 @@ public class ShootyWeapon : Weapon
     {
         Shoot(user);
     }
+    
+
+    public override void Unequip(WeaponUser user)
+    {
+        user.shootObject.SetActive(false);
+    }
+
+    public override void Equip(WeaponUser user)
+    {
+        user.shootObject.SetActive(true);
+    }
 
     private void Shoot(WeaponUser user)
     {

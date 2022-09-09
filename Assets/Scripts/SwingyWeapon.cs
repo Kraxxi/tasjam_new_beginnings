@@ -11,8 +11,16 @@ public class SwingyWeapon : Weapon
         Swing(user);
     }
 
+    public override void Unequip(WeaponUser user) { }
+    public override void Equip(WeaponUser user)
+    {
+        
+    }
+
     private void Swing(WeaponUser user)
     {
-        Debug.Log("Swinging!");
+        
+        user.weaponAnim.SetTrigger("swing");
     }
+
 }
