@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 1632255502, guid: 67dd7c3c0a2b7e44db3ce189720e0d22, type: 3}
   enemyName: Rat
-  health: 2000
+  health: 50
   knockbackMultiplier: 1

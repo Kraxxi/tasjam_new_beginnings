@@ -10,8 +10,9 @@ public class Killable : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rb2d;
     public float invincibilityDuration = 0.5f;
-    public UnityEvent onDeath;
     public float knockbackMultiplier = 1f;
+    public RoomManager roomManager;
+
     
     public void TakeDamage(float amount)
     {
@@ -19,11 +20,10 @@ public class Killable : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            onDeath.Invoke();
+            roomManager.OnEnemyDeath(transform.root.gameObject);
         }
         else
         {
-
             StartCoroutine(InvincibilityFrames());
         }
     }
@@ -41,5 +41,4 @@ public class Killable : MonoBehaviour
         invincible = b;
         anim.SetBool("invincible", b);
     }
-    
 }

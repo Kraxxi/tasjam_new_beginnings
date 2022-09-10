@@ -32,7 +32,7 @@ public class WeaponUser : MonoBehaviour
 
         var itemPickupGO = Instantiate(itemPickupPrefab, transform.position, quaternion.identity);
         var itemPickup = itemPickupGO.GetComponent<ItemPickup>();
-
+        Debug.Log($"Unequipped {currentWeapon.name}!", itemPickupGO);
         itemPickup.item = currentWeapon;
         itemPickup.itemCollider.enabled = false;
         itemPickup.DelayEnableCollider();

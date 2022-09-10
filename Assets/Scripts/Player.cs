@@ -26,4 +26,10 @@ public class Player : MonoBehaviour
         pickup.item.OnCollect(this);
         Destroy(pickup.gameObject);
     }
+
+    public void Reset(Vector3 resetPos)
+    {
+        transform.position = resetPos;
+        killable.currentHealth = startingHealth;
+    }
 }
