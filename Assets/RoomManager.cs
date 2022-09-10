@@ -60,9 +60,11 @@ public class RoomManager : MonoBehaviour
     private IEnumerator SpawnRoutine()
     {
         _isSpawning = true;
-        yield return new WaitForSeconds(1f);
         for (int i = 0; i < level + 1; i++)
         {
+            float randyF = Random.Range(1f, 5f);
+            yield return new WaitForSeconds(randyF);
+            
             int randy = Random.Range(0, spawners.Count);
             Vector3 randyPos = spawners[randy].transform.position;
 
@@ -73,9 +75,6 @@ public class RoomManager : MonoBehaviour
             enemy.killable.roomManager = this;
             spawnedEnemies.Add(enemyGO);
             enemy.enemy = enemyTypes[randy];
-
-            float randyF = Random.Range(1f, 5f);
-            yield return new WaitForSeconds(randyF);
         }
 
         _isSpawning = false;
