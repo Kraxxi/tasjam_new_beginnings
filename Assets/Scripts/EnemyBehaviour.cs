@@ -1,17 +1,16 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
     public Enemy enemy;
-    public float currentHealth;
-
-
+    public Killable killable;
+    public SpriteRenderer sr;
+    
     private void Start()
     {
         gameObject.name = enemy.enemyName;
-        currentHealth = enemy.health;
+        killable.currentHealth = enemy.health;
+        sr.sprite = enemy.sprite;
+        killable.knockbackMultiplier = enemy.knockbackMultiplier;
     }
 }

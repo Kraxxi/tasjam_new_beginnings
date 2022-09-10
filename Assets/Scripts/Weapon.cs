@@ -8,7 +8,8 @@ public abstract class Weapon : Item
     public float damage;
     public bool continuousAttack;
     public float attackCooldown;
-    
+    public float knockback;
+
     
     public abstract void Attack(WeaponUser user);
     public abstract void Unequip(WeaponUser user);

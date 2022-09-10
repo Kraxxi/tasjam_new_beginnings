@@ -16,3 +16,5 @@ MonoBehaviour:
   damage: 10
   continuousAttack: 0
   attackCooldown: 0
+  knockback: 20
+  swingPrefab: {fileID: 8497908900966880826, guid: 46b79a4154fe3bd4bbc31c150c365ceb, type: 3}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1676293598096773085}
   - component: {fileID: 3356840701794807592}
   - component: {fileID: 1520674405120679671}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ItemPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ Transform:
   - {fileID: 5999432360609472809}
   - {fileID: 7161016991277129262}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1676293598096773085
 MonoBehaviour:
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5999432360609472809}
   - component: {fileID: 8741814413716202637}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: -1864773517
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -288761481, guid: 67dd7c3c0a2b7e44db3ce189720e0d22, type: 3}
+  m_Sprite: {fileID: -890489034, guid: 67dd7c3c0a2b7e44db3ce189720e0d22, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -181,7 +181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7161016991277129262}
   - component: {fileID: 5047590571562770889}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}

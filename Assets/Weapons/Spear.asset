@@ -16,3 +16,6 @@ MonoBehaviour:
   damage: 10
   continuousAttack: 0
   attackCooldown: 0
+  knockback: 5
+  projectilePrefab: {fileID: 2175790665595628280, guid: 9b7ad5446b8f38d49aeac44aaa1f6464, type: 3}
+  projectileSpeed: 10

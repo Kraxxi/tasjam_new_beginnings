@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class WeaponUser : MonoBehaviour
 {
+    public LayerMask projectileLayer;
+    
     public Weapon currentWeapon;
     public AimDirection aimDirection;
-    public Animator weaponAnim;
-    public GameObject swingObject;
     public GameObject shootObject;
 
     public GameObject itemPickupPrefab;
