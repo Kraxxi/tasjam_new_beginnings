@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -10,13 +11,18 @@ public class Player : MonoBehaviour
     public AimDirection aimDirection;
     public Killable killable;
     public float startingHealth;
-    
+    public Slider slider;
     
     private void Start()
     {
         killable.currentHealth = startingHealth;
     }
 
+    public void UpdateUI()
+    {
+        slider.value = killable.currentHealth / startingHealth;
+    }
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         ItemPickup pickup = other.GetComponent<ItemPickup>();
@@ -32,4 +38,6 @@ public class Player : MonoBehaviour
         transform.position = resetPos;
         killable.currentHealth = startingHealth;
     }
+    
+    
 }

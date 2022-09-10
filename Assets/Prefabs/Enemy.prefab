@@ -1,5 +1,55 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &38313195912465056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3463995768071534768}
+  - component: {fileID: 5265024604581466863}
+  m_Layer: 7
+  m_Name: LootDropper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3463995768071534768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38313195912465056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7012136073940393425}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5265024604581466863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 38313195912465056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dc86e3ec5b2cc44eb6d22161035d64f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droppedItemPrefab: {fileID: 1676293598096773086, guid: cfe96f71a8b656941bf78601c78a7b95, type: 3}
+  lootList:
+  - {fileID: 11400000, guid: 33381ab1777ca8c48903ed05735a3851, type: 2}
+  - {fileID: 11400000, guid: ea4d2bcb35a480f4d870b41d60fd79f1, type: 2}
+  - {fileID: 11400000, guid: ab0bf27d37eb2484f919fc1b2387c125, type: 2}
+  dropChance: 0.1
 --- !u!1 &7012136072982828109
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,13 +290,18 @@ MonoBehaviour:
   anim: {fileID: 7012136073940393424}
   rb2d: {fileID: 7012136073940393439}
   invincibilityDuration: 0.5
+  knockbackMultiplier: 1
+  roomManager: {fileID: 0}
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
   onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7012136073940393438}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 5265024604581466863}
+        m_TargetAssemblyTypeName: LootDropper, Assembly-CSharp
+        m_MethodName: DropLoot
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -255,7 +310,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  knockbackMultiplier: 1
 --- !u!58 &7012136073670988381
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -384,8 +438,9 @@ Transform:
   - {fileID: 7012136072982828110}
   - {fileID: 7012136073601111314}
   - {fileID: 7012136073806400836}
+  - {fileID: 3463995768071534768}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &7012136073940393424
 Animator:
@@ -442,4 +497,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 0}
   killable: {fileID: 7012136073670988382}
+  lootDropper: {fileID: 5265024604581466863}
   sr: {fileID: 7012136072982828111}

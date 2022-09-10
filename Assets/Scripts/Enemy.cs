@@ -10,4 +10,6 @@ public class Enemy : ScriptableObject
     public string enemyName;
     public float health;
     public float knockbackMultiplier = 1f;
+    public List<Item> lootList;
+    public float lootDropChance;
 }

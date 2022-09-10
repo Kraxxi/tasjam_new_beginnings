@@ -16,3 +16,10 @@ MonoBehaviour:
   enemyName: Rat
   health: 50
   knockbackMultiplier: 1
+  lootList:
+  - {fileID: 11400000, guid: 33381ab1777ca8c48903ed05735a3851, type: 2}
+  - {fileID: 11400000, guid: 33381ab1777ca8c48903ed05735a3851, type: 2}
+  - {fileID: 11400000, guid: 33381ab1777ca8c48903ed05735a3851, type: 2}
+  - {fileID: 11400000, guid: ab0bf27d37eb2484f919fc1b2387c125, type: 2}
+  - {fileID: 11400000, guid: ea4d2bcb35a480f4d870b41d60fd79f1, type: 2}
+  lootDropChance: 0.25

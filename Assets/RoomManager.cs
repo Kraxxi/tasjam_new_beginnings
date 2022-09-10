@@ -18,6 +18,8 @@ public class RoomManager : MonoBehaviour
     public Animator doorAnim;
     public TextMeshProUGUI levelIndicator;
 
+    private bool _isSpawning;
+    
     private void Start()
     {
         ResetRoom();
@@ -25,7 +27,7 @@ public class RoomManager : MonoBehaviour
 
     public void ResetRoom()
     {
-        player.Reset(playerSpawn.position);
+        player.transform.position = playerSpawn.position;
         levelIndicator.text = $"Level: {level + 1}";
         for (int i = spawnedEnemies.Count - 1; i >= 0; i--)
         {
@@ -34,6 +36,13 @@ public class RoomManager : MonoBehaviour
         }
         doorAnim.SetBool("doorOpen", false);
 
+        ItemPickup[] pickups = FindObjectsOfType<ItemPickup>();
+
+        for (int i = pickups.Length - 1; i >= 0; i--)
+        {
+            Destroy(pickups[i].gameObject);
+        }
+        
         SpawnBasedOnLevel();
     }
 
@@ -50,7 +59,7 @@ public class RoomManager : MonoBehaviour
 
     private IEnumerator SpawnRoutine()
     {
-
+        _isSpawning = true;
         yield return new WaitForSeconds(1f);
         for (int i = 0; i < level + 1; i++)
         {
@@ -68,11 +77,14 @@ public class RoomManager : MonoBehaviour
             float randyF = Random.Range(1f, 5f);
             yield return new WaitForSeconds(randyF);
         }
+
+        _isSpawning = false;
     }
 
     private void RestartGame()
     {
         level = 0;
+        player.Reset(playerSpawn.position);
         ResetRoom();
     }
     
@@ -89,7 +101,7 @@ public class RoomManager : MonoBehaviour
         spawnedEnemies.Remove(enemyGameObject);
         Destroy(enemyGameObject);
         
-        if (spawnedEnemies.Count == 0)
+        if (spawnedEnemies.Count == 0 && !_isSpawning)
         {
             doorAnim.SetBool("doorOpen", true);
         }
