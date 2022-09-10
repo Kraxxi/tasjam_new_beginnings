@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -15,7 +16,7 @@ public class RoomManager : MonoBehaviour
     public int level;
     public GameObject enemyPrefab;
     public Animator doorAnim;
-
+    public TextMeshProUGUI levelIndicator;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class RoomManager : MonoBehaviour
     public void ResetRoom()
     {
         player.Reset(playerSpawn.position);
-
+        levelIndicator.text = $"Level: {level + 1}";
         for (int i = spawnedEnemies.Count - 1; i >= 0; i--)
         {
             Destroy(spawnedEnemies[i]);
@@ -44,6 +45,13 @@ public class RoomManager : MonoBehaviour
 
     private void SpawnBasedOnLevel()
     {
+        StartCoroutine(SpawnRoutine());
+    }
+
+    private IEnumerator SpawnRoutine()
+    {
+
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < level + 1; i++)
         {
             int randy = Random.Range(0, spawners.Count);
@@ -57,6 +65,8 @@ public class RoomManager : MonoBehaviour
             spawnedEnemies.Add(enemyGO);
             enemy.enemy = enemyTypes[randy];
 
+            float randyF = Random.Range(1f, 5f);
+            yield return new WaitForSeconds(randyF);
         }
     }
 
