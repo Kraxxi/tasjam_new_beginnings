@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6386e809d557dd24aa12c0909972117d, type: 3}
+  m_Name: Cyclops
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -1769941797, guid: 67dd7c3c0a2b7e44db3ce189720e0d22, type: 3}
+  enemyName: Rat
+  health: 150
+  knockbackMultiplier: 1
+  lootList:
+  - {fileID: 11400000, guid: 33381ab1777ca8c48903ed05735a3851, type: 2}
+  - {fileID: 11400000, guid: 33381ab1777ca8c48903ed05735a3851, type: 2}
+  - {fileID: 11400000, guid: d5092c84b421dd847bbde06e68152281, type: 2}
+  - {fileID: 11400000, guid: ab0bf27d37eb2484f919fc1b2387c125, type: 2}
+  - {fileID: 11400000, guid: ea4d2bcb35a480f4d870b41d60fd79f1, type: 2}
+  lootDropChance: 0.85

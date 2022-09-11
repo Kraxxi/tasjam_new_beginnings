@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   knockback: 0
+  bloodSplatterParticles: {fileID: 1602111757433911890, guid: 9bb1e3bb1ce97c544aaa2749e534edbd, type: 3}
 --- !u!50 &-6646227137378947399
 Rigidbody2D:
   serializedVersion: 4

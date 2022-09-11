@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: 
   itemSprite: {fileID: -288761481, guid: 67dd7c3c0a2b7e44db3ce189720e0d22, type: 3}
-  damage: 10
+  damage: 5
   continuousAttack: 0
   attackCooldown: 0
   knockback: 5
   projectilePrefab: {fileID: 2175790665595628280, guid: 9b7ad5446b8f38d49aeac44aaa1f6464, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 15

@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
+  maxHealth: 0
   invincible: 0
   anim: {fileID: 7012136073940393424}
   rb2d: {fileID: 7012136073940393439}
@@ -310,6 +311,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  bloodSplatPrefab: {fileID: 1444214328074688076, guid: c448801c434e3b74ea8fa6e7444d1695, type: 3}
+  hurtSound: {fileID: 8300000, guid: b49ec82333e4628429f6099d12b43ff8, type: 3}
+  minPitch: 0.8
+  maxPitch: 1.1
 --- !u!58 &7012136073670988381
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -340,6 +345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   knockback: 15
+  bloodSplatterParticles: {fileID: 1602111757433911890, guid: 9bb1e3bb1ce97c544aaa2749e534edbd, type: 3}
 --- !u!1 &7012136073806400835
 GameObject:
   m_ObjectHideFlags: 0

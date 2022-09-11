@@ -16,8 +16,10 @@ public class Killable : MonoBehaviour
     public RoomManager roomManager;
     public UnityEvent onTakeDamage;
     public UnityEvent onDeath;
-
-    
+    public GameObject bloodSplatPrefab;
+    public AudioClip hurtSound;
+    public float minPitch;
+    public float maxPitch;
     
     public void TakeDamage(float amount)
     {
@@ -30,6 +32,13 @@ public class Killable : MonoBehaviour
             return;
         }
 
+        var audioGO = Instantiate(new GameObject());
+        var audioSource = audioGO.AddComponent<AudioSource>();
+        audioSource.volume = 0.5f;
+        audioSource.pitch = Random.Range(minPitch, maxPitch);
+        audioSource.PlayOneShot(hurtSound);
+        Destroy(audioSource, hurtSound.length);
+
         if (currentHealth <= 0)
         {
             roomManager.OnEnemyDeath(transform.root.gameObject);
@@ -40,6 +49,7 @@ public class Killable : MonoBehaviour
             StartCoroutine(InvincibilityFrames());
         }
 
+        Instantiate(bloodSplatPrefab, transform.position, Quaternion.identity);
         onTakeDamage.Invoke();
     }
 

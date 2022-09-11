@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class RoomManager : MonoBehaviour
@@ -82,9 +83,7 @@ public class RoomManager : MonoBehaviour
 
     private void RestartGame()
     {
-        level = 0;
-        player.Reset(playerSpawn.position);
-        ResetRoom();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     public void OnEnemyDeath(GameObject enemyGameObject)
